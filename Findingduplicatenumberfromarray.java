@@ -1,7 +1,7 @@
 package Offer;
 
 
-public class example3 {
+public class Findingduplicatenumberfromarray {
 	public int finddup(int[] input, int length) {
 		if(input==null || length<=0) {
 			return -1;
@@ -20,9 +20,9 @@ public class example3 {
 		return -1;
 	}
 	public static void main(String[] args) {
-		example3 ex3 = new example3();
+		Findingduplicatenumberfromarray fdna = new Findingduplicatenumberfromarray();
 		int[] num = {2,3,1,0,2,5,3};
 		System.out.println(num);
-		System.out.println(ex3.finddup(num, 7));
+		System.out.println(fdna.finddup(num, 7));
 	}
 }
