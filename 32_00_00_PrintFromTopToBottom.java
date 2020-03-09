@@ -23,7 +23,7 @@ public class Solution {
         }
         queue.add(root);
         while(queue.size() != 0){
-            TreeNode pCurrent = queue.poll();
+            TreeNode pCurrent = queue.pop();
             array.add(pCurrent.val);
             if(pCurrent.left != null){
                 queue.add(pCurrent.left);
