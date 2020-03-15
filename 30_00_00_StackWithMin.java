@@ -33,7 +33,7 @@ public class Solution {
     
     public int top() {
         if(!s_data.isEmpty()){
-            return s_data.peek();
+            return s_data.peek();//返回栈顶元素，但是不从栈内删除元素，没有top()这样的函数
         }
         return 0;
     }
