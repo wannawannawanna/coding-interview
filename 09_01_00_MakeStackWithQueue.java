@@ -7,7 +7,7 @@ public class example9_1 {
 	Queue<Integer> q2 = new LinkedList<Integer>();
 	public void push(int node) {
 		if(q1.isEmpty() && q2.isEmpty()) {			
-			q1.add(node);			
+			q1.add(node);		//队列没有push()函数,push()是栈的
 		}
 		else if(!q1.isEmpty()) {			
 			q1.add(node);		
@@ -28,7 +28,8 @@ public class example9_1 {
 		}
 		else if(!q2.isEmpty() && q1.isEmpty()) {
 			while(q2.size() != 1) {			
-				int current = q2.poll();
+				int current = q2.poll();  //返回队列顶元素，并删除，没有pop()这个函数，pop是栈的，，，
+				//如果只想返回队列顶元素不删除，那么用peek（）
 				q1.add(current);
 			}			
 			return q2.poll();
