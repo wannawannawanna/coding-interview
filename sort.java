@@ -217,3 +217,31 @@ public void bubble_sort(int[] arr) {
       }
     }
 }
+
+
+
+//计数排序，只有这个排序时间复杂度是o(n),公司员工年龄排序
+void sortAges(int[] array) throws Exception{
+	if(array == null){
+		return;
+	}
+	int oldage = 99;
+	int[] timesoldage = new int[oldage+1];
+	for(int i = 0; i < timesoldage.length; i++){
+		timesoldage[i] = 0;
+	}
+	for(int i = 0; i < array.length; i++){
+		if(array[i] < 0 || array[i] > 99){
+			throw new Exception("age out of range");
+		}
+		timesoldage[array[i]]++;
+	}
+	int index = 0;
+	for(int i = 0; i < timesoldage.length; i++){
+		for(int j = 0; j < timesoldage[i]; j++){
+			array[index] = i;
+			index++;
+		}
+	}
+	
+}
