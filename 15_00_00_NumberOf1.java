@@ -41,7 +41,7 @@ public class Solution {
         int count = 0;
         while (n != 0) {
             ++count;
-            n = (n - 1) & n;
+            n = (n - 1) & n;//把n中最右面的1置0，所以原数中有多少个1进行多少次这样的操作就行（最右面的1置0）
         }
         return count;
     }
