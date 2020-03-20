@@ -15,7 +15,7 @@ public class Solution {
     public int NumberOf1(int n) {
         int count = 0;
         for(int i = 0; i < 32; i++){//int是32位的，所以需要移动32位
-            if ((n & (1 << i)) != 0) {   //1左移i位
+            if ((n & (1 << i)) != 0) {   //1左移i位   n & (1 << i)能找到n中第i位是否不为0
                 count++;
             }
         }
