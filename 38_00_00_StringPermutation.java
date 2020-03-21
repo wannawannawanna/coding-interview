@@ -27,11 +27,11 @@ public class Solution {
             }
         }
     }
-    public void swap(char A, char B){
-        char temp = A;
-        A = B;
-        B = temp;
-    }
+//     public void swap(char A, char B){  //不知道为什么这样交换数组元素不可以
+//         char temp = A;
+//         A = B;
+//         B = temp;
+//     }
     public void swap(char[] cs, int i, int j) {
         char temp = cs[i];
         cs[i] = cs[j];
