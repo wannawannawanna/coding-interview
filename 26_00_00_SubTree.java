@@ -17,7 +17,7 @@ public class Solution {
         boolean result = false;
         //当Tree1和Tree2都不为零的时候，才进行比较。否则直接返回false
         if(root1 != null && root2 != null){
-            if(root1.val == root2.val){
+            if(root1.val == root2.val){   //val是int型，剑指offer上是double类型，不能用==号，需要自己写Equal函数
                 result = DoesTree1HaveTree2(root1, root2);
             }
             //如果找不到，那么就再去root的左儿子当作起点，去判断时候包含Tree2
@@ -44,5 +44,13 @@ public class Solution {
             return false;
         }
         return DoesTree1HaveTree2(root1.left, root2.left) && DoesTree1HaveTree2(root1.right, root2.right);
+    }
+    public boolean Equal(double a, bouble b){ //bouble类型判断相不相等
+        if(Math.abs(a,b) <= 0.0000001){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
