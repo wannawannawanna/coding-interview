@@ -27,7 +27,7 @@ public class Solution {
         }
         //时刻判断数组是否越界
         if(patternIndex + 1 < pattern.length && pattern[patternIndex + 1] == '*'){
-            if( (strIndex != str.length && pattern[patternIndex] == str[strIndex]) || (pattern[patternIndex] == '.' && strIndex != str.length) ){
+            if( strIndex != str.length && (pattern[patternIndex] == str[strIndex] || (pattern[patternIndex] == '.' && strIndex != str.length))){
                 return matchCore(str, strIndex + 1, pattern, patternIndex + 2) ||  //匹配一次
                     matchCore(str, strIndex + 1, pattern, patternIndex) ||  //匹配多次，所以patternIndex不变
                     matchCore(str, strIndex, pattern, patternIndex + 2);//能匹配上，但是不想匹配   
@@ -36,7 +36,7 @@ public class Solution {
                 return matchCore(str, strIndex, pattern, patternIndex + 2);//匹配不上
             }
         }
-        if( (strIndex != str.length && str[strIndex] == pattern[patternIndex]) || (pattern[patternIndex] == '.' && strIndex != str.length) ){
+        if( strIndex != str.length && (str[strIndex] == pattern[patternIndex] || (pattern[patternIndex] == '.' && strIndex != str.length))){
             return matchCore(str, strIndex + 1, pattern, patternIndex + 1);
         }
         return false;
