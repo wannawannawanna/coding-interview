@@ -20,11 +20,12 @@ void Print1ToMaxNDigitRecursively(char[] number, int length, int index){
         return;
     }
     for(int i = 0; i < 10; i++){
-        number[index + 1] = i + '0';
-        Print1ToMaxNDigitRecursively(number, length, index + 1);
+        number[index + 1] = i + '0';  //第二个位置，然后开始递归
+        Print1ToMaxNDigitRecursively(number, length, index + 1);  
     }
 }
 
+//不打印前面的0，如023要打印成23
 void PrintNumber(char[] number){
     boolean isBeginning = true;
     for(int i = 0; i < number.length; i++){
