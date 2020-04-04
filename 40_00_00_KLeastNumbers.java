@@ -26,10 +26,10 @@ public class Solution {
         return result;
         
     }
-    public void swap(int i, int j){
-        int temp = i;
-        i = j;
-        j = temp;
+    public void swap(input[] num, int i, int j){
+        int temp = input[i];
+        input[i] = input[j];
+        input[j] = temp;
     }
     int partition(int[] nums, int begin, int end){
         if(begin == end){
