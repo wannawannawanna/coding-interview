@@ -87,10 +87,10 @@ public class HeapSort {
 
 
 //快速排序，适用于链表的写法，partition的时间复杂度o(n),QuickSort的时间复杂度是o(logn),快速排序的时间复杂度即o(nlogn)。
-private void swap(int a, int b) {
-        int temp = a;
-        a = b;
-        b = a;
+private void swap(int[] num, int a, int b) {
+        int temp = num[a];
+        num[a] = num[b];
+        num[b] = num[a];
     }
 int partition(int[] nums, int begin, int end){
     if(begin == end){
@@ -102,11 +102,11 @@ int partition(int[] nums, int begin, int end){
     while(fast <= end){
         if(nums[fast] < nums[base]){
             slow++;
-            swap(nums[slow], nums[fast]);
+            swap(nums, slow, fast);
         }
         fast++;
     }
-    swap(nums[base], nums[slow]);
+    swap(nums, base, slow);
     return slow;
 }
 int[] QuickSort(int[] nums, int begin, int end){
