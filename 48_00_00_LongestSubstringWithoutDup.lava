@@ -1,0 +1,29 @@
+//用0~25的相对位置，存储a~z字符
+public class Solution{
+    public int LongestSubStringWithoutDup(String str){
+        int curLength = 0;
+        int maxLength = 0;
+        int[] position = new int[26];  //总共26个字符
+        for(int i = 0; i < 26; i++){
+            position[i] = -1;  //用-1表示这个字符串没有出现过
+        }
+        for(int i = 0; i < str.length(); i++){
+            int prevIndex = position[str.charAt(i) - 'a'];
+            if(prevIndex < 0 || i - prevIndex > curLength){   //表示当前字符没出现过或者当前出现跟上次出现的距离比f(i - 1)大
+                curLength++;  //考虑当前出现的位置
+            }else{
+                curLength = i - prevIndex;  //表示当前出现跟上次出现的距离比f(i - 1)小，所以不考虑当前出现的位置，两次的距离即最长子字符串长度
+            }
+            position[str.charAt(i) - 'a'] = i;  //记录当前出现的位置
+        }
+        if(curLength > maxLength){
+            maxLength = curLength;
+        }
+        return maxLength;
+    }
+    public static void main(String[] args) {
+      example48 ex = new example48();
+      String str = "arabcacfr";
+      System.out.println(ex.LongestSubStringWithoutDup(str));
+    }
+}
