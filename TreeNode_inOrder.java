@@ -33,11 +33,11 @@ class Solution {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
         while(!stack.isEmpty() || cur != null){
-            if(cur != null){
+            while(cur != null){  //对于当前节点一直找左子节点，直到找不到为止
                 stack.push(cur);
                 cur = cur.left;
             }
-            else{
+            if(!stack.isEmpty()){  //没有左子节点，可以出栈，这时候栈顶元素是一个子树中的根结点
                 cur = stack.pop();
                 res.add(cur.val);
                 cur = cur.right;
