@@ -34,6 +34,9 @@ public class Solution {
             KthNodeCore(pRoot.left, k, list);
         }
         list.add(pRoot);
+        if(list.size() == k){
+            return;
+        }
         if(pRoot.right != null){
             KthNodeCore(pRoot.right, k, list);
         }
