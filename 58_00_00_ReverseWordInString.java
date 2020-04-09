@@ -17,7 +17,7 @@ public class Solution {
   //用双指针形式，夹逼翻转
     public void Reverse(char[] chars, int start, int end){
         int length = chars.length;
-        if(chars == null || length <= 0 || start < 0 || end >= length){
+        if(chars == null || length <= 0 || start < 0 || end >= length || start >= end){
             return;
         }
         while(start < end){
