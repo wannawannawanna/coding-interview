@@ -4,7 +4,7 @@ public class Solution {
         if(numbers == null || numbers.length <= 0){
             return false;
         }
-        Arrays.sort(numbers);   //对数组进行排序
+        Arrays.sort(numbers);   //对数组进行排序，因为总共就0~13个数字，所以不管用什么排序其实影响不大
         int numberOfZero = 0;
         int numberOfGap = 0;
         int length = numbers.length;
