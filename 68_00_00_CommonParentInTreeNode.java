@@ -47,7 +47,7 @@ public static void getLastCommonNode(TreeNode pRoot, TreeNode pLeft, TreeNode pR
 import java.util.ArrayList;
 class TreeNode{
     int val;
-    List<TreeNode> children = new ArrayList<TreeNode>();  //其左右子节点
+    List<TreeNode> children = new ArrayList<TreeNode>();  //其下一层的所有子节点
     TreeNode(int val){
         this.val = val;
     }
@@ -69,7 +69,7 @@ public class Solution{
             return;
         }
         tmpList.add(pRoot); //临时存储，递归添加所有到达目标节点时经过的节点
-        ArrayList<TreeNode> childs = pRoot.children;  //左右子节点
+        ArrayList<TreeNode> childs = pRoot.children;  //其下一层的所有子节点
         for(TreeNode node : childs){
             if(node == pNode){
                 path.addAll(tmpList);  //将tmpList里面的所有节点添加到path中
