@@ -9,7 +9,8 @@ public class Solution{
         }
         for(int i = 0; i < str.length(); i++){
             int prevIndex = position[str.charAt(i) - 'a'];
-            if(prevIndex < 0 || i - prevIndex > curLength){   //表示当前字符没出现过或者当前出现跟上次出现的距离比f(i - 1)大
+            if(prevIndex < 0 || i - prevIndex > curLength){   //表示当前字符没出现过或者当前出现跟上次出现的距离比f(i - 1)大，即算f(i - 1)的
+            //时候，没有考虑str.charAt(i)这个字符
                 curLength++;  //考虑当前出现的位置
             }else{
                 curLength = i - prevIndex;  //表示当前出现跟上次出现的距离比f(i - 1)小，所以不考虑当前出现的位置，两次的距离即最长子字符串长度
