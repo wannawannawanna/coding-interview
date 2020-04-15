@@ -16,10 +16,11 @@ public class Solution{
                 curLength = i - prevIndex;  //表示当前出现跟上次出现的距离比f(i - 1)小，所以不考虑当前出现的位置，两次的距离即最长子字符串长度
             }
             position[str.charAt(i) - 'a'] = i;  //记录当前出现的位置
+            if(curLength > maxLength){ 
+                maxLength = curLength;
+            }
         }
-        if(curLength > maxLength){
-            maxLength = curLength;
-        }
+        
         return maxLength;
     }
     public static void main(String[] args) {
