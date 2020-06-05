@@ -33,7 +33,7 @@ public class PreorderReverse {
 		while(pNode != null) {
 			RandomListNode pCloned = pNode.next;
 			if(pNode.random != null) {
-				pCloned.random = pNode.next.random;
+				pCloned.random = pNode.random.next;
 			}
 			pNode = pCloned.next;
 			
