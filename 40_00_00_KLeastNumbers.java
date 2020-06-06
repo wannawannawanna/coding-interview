@@ -38,7 +38,7 @@ public class Solution {
             return begin;
         }
         int base = begin;//从左到右扫描，使用与链表
-        int slow = begin;//标致着替换的位置,slow最终会停留在比base元素小的最后一个元素下标上，[3,6,2,1,4,2,7],这时slow等于下标5。
+        int slow = begin;//标致着替换的位置,slow最终会停留在比base元素小的最后一个元素下标上，[3,6,2,1,4,2,7],这时slow等于下标3。
         int fast = slow + 1; //fast依次往右扫描，对比是否比base小
         while(fast <= end){
             if(nums[fast] < nums[base]){
