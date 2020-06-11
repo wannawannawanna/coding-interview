@@ -77,7 +77,7 @@ public class Solution{
             }
             getNodePath(node, pNode, tmpList, path);//递归找node的孩子节点判断时候是pNode
         }
-        tmpList.remove(tmpList.size() - 1);  //清空tmpList,因为找两个目标节点的路径的时候都用tmpList，所以不清空对第二个目标节点有影响
+        tmpList.remove(tmpList.size() - 1);  //层层递归中，当没有找到目标节点，返回上一层递归之前把链表中最后一个元素删掉
     }
     public TreeNode getLastCommonParent(ArrayList<TreeNode> path1, ArrayList<TreeNode> path2){
         TreeNode tmpNode = null;
