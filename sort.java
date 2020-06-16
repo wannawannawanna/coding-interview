@@ -189,7 +189,7 @@ public int[] insertSort(int[] nums){
         int temp = nums[i];//临时存储第i个元素
         int j = i;
         //从前面有序序列里面找到比temp大的元素
-        while(j > 0 && nums[j - i] > temp){
+        while(j > 0 && nums[j - 1] > temp){
             nums[j] = nums[j - 1];//只要找到大的元素，依次往右挪
             j--;
         }
