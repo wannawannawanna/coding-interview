@@ -57,7 +57,7 @@ public ArrayList<String> Combination(String str){
         String s;
         for(int j = 0; j < length; j++){  //将1到2^n-1用二进制表示，将所有位上的1都找出来
             int temp = i;
-            if(i & (1 << j)){ //如果j位是1，就会被找出来
+            if((i & (1 << j)) != 0){ //如果j位是1，就会被找出来
                 s += str.charAt(j);
             }
         }
