@@ -53,7 +53,7 @@ public ArrayList<String> Combination(String str){
     }
     int length = str.length();
     int n = 1 << length;   // 2^n
-    for(int i = 1; i < n; i++){  //2^0不用算,所有状态加起来是2^n-1,所以1到2^n
+    for(int i = 1; i < n; i++){  //2^0不用算,所有状态加起来是2^n-1,所以1到2^n-1
         String s;
         for(int j = 0; j < length; j++){  //将1到2^n-1用二进制表示，将所有位上的1都找出来
             int temp = i;
