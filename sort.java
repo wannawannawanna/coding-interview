@@ -1,5 +1,5 @@
 // 堆排序:
-//   堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为O(nlogn)，它也是不稳定排序。
+//   堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为O(nlogn)，它也是不稳定排序。空间复杂度o(1)
 // 堆:
 // 　堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。
 //   同时，我们对堆中的结点按层进行编号，将这种逻辑结构映射到数组中。
@@ -87,7 +87,7 @@ public class HeapSort {
 }
 
 
-//快速排序，适用于链表的写法，partition的时间复杂度o(n),QuickSort的时间复杂度是o(logn),快速排序的时间复杂度即o(nlogn)。
+//快速排序，适用于链表的写法，partition的时间复杂度o(n),QuickSort的时间复杂度是o(logn),快速排序的时间复杂度即o(nlogn)。空间复杂度o(1),无论数组还是链表都是o(1)
 private void swap(int[] num, int a, int b) {
         int temp = num[a];
         num[a] = num[b];
@@ -122,7 +122,7 @@ int[] QuickSort(int[] nums, int begin, int end){
 
 //归并排序,一般应用是，海量数据的时候，先用一次归并排序拆分成若干个小数组，然后小数组内不用归并排序进行排序，而是使用快速排序，然后存到文件中，
 //顺序读取，合并到一个文件中
-// 注意, 首先要把数组分成两部分, 然后再把两部分当做有序数组来进行合并,时间复杂度o(NlogN)
+// 注意, 首先要把数组分成两部分, 然后再把两部分当做有序数组来进行合并,时间复杂度o(NlogN)，数组排序的话，空间复杂度是o(N)；但是链表排序的话空间复杂度o(1)
 import java.util.Arrays;
 
 /**
@@ -135,7 +135,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(arr));
     }
     public static void sort(int []arr){
-        int []temp = new int[arr.length];//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间
+        int []temp = new int[arr.length];//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间 ,o(N)复杂度的来源
         sort(arr,0,arr.length-1,temp);
     }
     private static void sort(int[] arr,int left,int right,int []temp){
