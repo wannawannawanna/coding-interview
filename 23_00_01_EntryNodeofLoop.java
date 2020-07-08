@@ -9,28 +9,28 @@ public class example23_1 {
 		ListNode slow = pHead;
 		ListNode fast = pHead;
 		 
-		while(fast != null) {
-		  	slow = slow.next;
-		  	fast = fast.next.next;
-		  	if(slow == fast) {      		
-		          return slow;
-		  	}
+		while(fast != null && fast.next != null && fast.next.next != null) {
+		     slow = slow.next;
+		     fast = fast.next.next;
+		     if(slow == fast) {      		
+		         return slow;
+		     }
 		}
 		return null;
 	}
 	public int GetCycleLength(ListNode listnode) {
-		if(listnode == null) {
+	    if(listnode == null) {
 	  	return 0;
-		  }
-		  ListNode current = listnode;
-		  int nodenum = 0;
-		  while(current != null){
-		  	current = current.next;
-		  	nodenum++;
-		      if(current == listnode)
-		          return nodenum;
-		  }
-		  return nodenum;
+	    }
+	    ListNode current = listnode;
+	    int nodenum = 0;
+	    while(current != null){
+		 current = current.next;
+		 nodenum++;
+		 if(current == listnode)
+		      return nodenum;
+	    }
+            return nodenum;
 	  
 	}
 	public ListNode EntryNodeOfLoop(ListNode pHead)
