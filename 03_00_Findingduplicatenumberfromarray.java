@@ -6,12 +6,12 @@ public class Findingduplicatenumberfromarray {
 		if(input==null || length<=0) {
 			return -1;
 		} 
-		for(int i = 0; i < length; i++) {			
-			while(i != input[i]) {				
-				if(input[i] == input[input[i]]) {						
+		for(int i = 0; i < length; i++) {  //相等的话，则接着扫描下一个数字就行			
+			while(i != input[i]) {	//如果不相等，m=input[i]			
+				if(input[i] == input[input[i]]) {  //则拿m和第m个数字进行比较，如果相等就已经找到了重复的数字						
 					return input[i];
 				}
-				int temp = input[i];
+				int temp = input[i]; //则拿m和第m个数字进行比较，如果不相等就互换一下
 				input[i] = input[temp];
 				input[temp] = temp;
 
