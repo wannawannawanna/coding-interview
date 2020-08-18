@@ -246,3 +246,38 @@ void sortAges(int[] array) throws Exception{
 	}
 	
 }
+
+
+
+/*
+选择排序，依次选出最大（小）的元素，并将他的位置和尚未排序的数组中最后一个元素互换，直到完成所有的元素的选择，借助一个max（min）和index，时间复杂度o(n^2),空间复杂度o(1).
+*/
+package bishi;
+
+import java.util.Arrays;
+
+public class chooseSort {
+	static int[] array = {3,2,4,1,5,0};
+	public static void chooseSort(int[] num) {
+		int max = Integer.MIN_VALUE;
+		int index = 0;
+		for(int i = 0; i < num.length - 1; i++) {  //外层循环，控制选择的次数，数组长度为6的话，选择5次
+			for(int j =0; j < num.length - i; j++) {
+				if(max < num[j]) {
+					max = num[j];
+					index = j;
+				}
+			}
+			//每次选择完成后，max中存放的是盖伦选出的最大值，将max指向位置的元素和未排序数组的最后一个元素互换
+			int temp = num[num.length - i - 1];
+			num[num.length - i - 1] = max;  
+			num[index] = temp;
+			max = Integer.MIN_VALUE;
+			index = 0;
+			System.out.println("经过第" + (i + 1) + "轮选择后，数组为" + Arrays.toString(num));
+		}
+	}
+	public static void main(String[] args) {
+		chooseSort(array);
+	}
+}
