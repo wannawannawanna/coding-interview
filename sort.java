@@ -281,3 +281,38 @@ public class chooseSort {
 		chooseSort(array);
 	}
 }
+
+
+
+
+
+/*希尔排序，是插入排序的改进版本，把数组元素按步长step分组，然后每组数据采用直接插入排序方法进行排序，步长从arr.length/2开始，依次除2，直到步长为1，随着步长的逐渐减小，所分成的组包含的数据
+会越来越多，当步长为1的时候，整个数据合成一组，构成一组有序记录，完成排序。时间复杂度o(nlogn) ~ o(n2),空间复杂度o(1)
+*/
+package bishi;
+
+import java.util.Arrays;
+
+public class shellSort {
+	public static void main(String[] args) {
+		int[] arr = {5,1,7,3,1,6,9,4};
+		shellSort(arr);
+		for(int i : arr) {
+			System.out.println(i);
+		}
+	}
+	public static void shellSort(int[] arr) {
+		for(int step = arr.length / 2; step >= 1; step /= 2) {
+			for(int i = step; i < arr.length; i++) {
+				int value = arr[i];
+				int j;
+				for(j = i - step; j >= 0 && arr[j] > value; j -= step) {
+					arr[j + step] = arr[j];
+				}
+				arr[j + step] = value;
+				System.out.println("step为" + i + "时候的数组" + Arrays.toString(arr));
+			}
+		}
+	}
+}
+
