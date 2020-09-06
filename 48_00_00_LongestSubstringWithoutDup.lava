@@ -29,3 +29,20 @@ public class Solution{
       System.out.println(ex.LongestSubStringWithoutDup(str));
     }
 }
+
+
+//LeetCode上的解法，用双指针+HashMap，hashmap当添加进去的两个元素相等的时候后一个会覆盖掉前一个
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> dict = new HashMap<Character, Integer>();
+        int i = -1, res = 0;
+        for(int j = 0; j < s.length(); j++){
+            if(dict.containsKey(s.charAt(j))){  //当有字符重复出现了，那么就要更新左边界，左边界是这个字符最后一次出现的位置和i当中比较大的那个
+                i = Math.max(i, dict.get(s.charAt(j)));
+            }
+            dict.put(s.charAt(j), j);
+            res = Math.max(res, j - i); //每次在res和j-i中取最大的
+        }
+        return res;
+    }
+}
